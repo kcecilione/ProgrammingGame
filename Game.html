@@ -1,0 +1,32 @@
+<!doc type html>
+	<html>
+		<head>
+			<title> Treasure Hunting Game </title>
+			<script type="text/javascript" src="WebPage.js"></script>
+		</head>
+		<body style="background-color:lightgrey"> 
+			<h1 style="text-align:center"> 
+				<img src="http://www.clker.com/cliparts/e/5/2/8/1195430727372284989eady_Treasure_Map.svg.med.png"
+					alt="Map"
+					height="250" width="250">
+				Treasure Hunting Game	
+				<img src="http://clipartlog.com/wp-content/uploads/2008/06/treasure-chest-large.png"
+					alt="Treasure"
+					height="250" width="250">
+			</h1>
+			<h2 style="text-align:center">
+				<button id="HowtoPlay" onclick=location.href="HowtoPlay.html"> Need Help? </button>
+			<h3 style="text-align:center">
+					Enter User Name: <input type="text" id="nameBox" size=10 value="">
+					Where would like to begin? (beach, forest, or cave): <input type="text" id="placeBox" size=10 value="">
+				<br>
+				<button id="EnterInfo"
+					onclick="document.getElementById('outputDiv').innerHTML=
+						'Hello ' + document.getElementById('nameBox').value + '! ' + 
+						'You have chosen to start at the ' + document.getElementById('placeBox').value + '.';">
+					Enter Information
+				</button>
+				<div id="outputDiv"> </div>
+			</h3>
+		</body>
+	</html>

@@ -26,21 +26,15 @@
 			Beware of the animals in the jungle- make sure you have protection!
 			Good luck!
 		</h3>
-		<button id="How To Play"
-				onclick="document.getElementById('outputDiv').innerHTML=
-				'Type in your responses to the questions. ' + 
-				'If you need help during the game, press the help button, located in the bottom left.';">
+		<h4 style="text-align:center">
+			<button id="How To Play"
+				onclick=location.href="HowtoPlay.html">
 				How to Play
-		</button>
-		Enter User Name: <input type="text" id="nameBox" size=10 value="">
-		Where would like to begin? (beach, forest, or cave): <input type="text" id="placeBox" size=10 value="">
-		<button id="BeginGame"
-				onclick="document.getElementById('outputDiv').innerHTML=
-				'Hello ' + document.getElementById('nameBox').value + '!' +
-				'You have chosen to start at the ' + document.getElementById('placeBox').value + '.';
-				document.getElementById('outputDiv').style.display='block';
-				document.getElementById('inputDiv').style.display='none';">
+			</button>
+			<button id="Begin Game"
+				onclick=location.href="Game.html">
 				Begin Game
-		</button>
-		<div id="outputDiv" style="display:none"</div>
+			</button>
+			<div id="outputDiv" style="display:none"</div>
+		</h4>
 	</html>
