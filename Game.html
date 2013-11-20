@@ -18,15 +18,23 @@
 				<button id="HowtoPlay" onclick=location.href="HowtoPlay.html"> Need Help? </button>
 			<h3 style="text-align:center">
 					Enter User Name: <input type="text" id="nameBox" size=10 value="">
-					Where would like to begin? (beach, forest, or cave): <input type="text" id="placeBox" size=10 value="">
+					Enter Gender: <input type="text" id="genderBox" size=10 value="">
+					Where would you like to begin? (beach, forest, or cave): 
+					<input type="text" id="placeBox" size=10 value="">
 				<br>
 				<button id="EnterInfo"
-					onclick="document.getElementById('outputDiv').innerHTML=
-						'Hello ' + document.getElementById('nameBox').value + '! ' + 
-						'You have chosen to start at the ' + document.getElementById('placeBox').value + '.';">
+						onclick="document.getElementById('outputDiv').innerHTML=
+							'Hello ' + document.getElementById('nameBox').value + '! ' + 
+							'You have chosen to begin at the ' + document.getElementById('placeBox').value + '.';">
 					Enter Information
 				</button>
-				<div id="outputDiv"> </div>
+				<div id="outputDiv"></div>
 			</h3>
+			<h4 style="text-align:center">
+				<button id="Begin"
+						onclick=
+					Begin Game
+				</button>
+			</h4>
 		</body>
 	</html>
