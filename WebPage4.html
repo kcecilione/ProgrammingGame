@@ -1,4 +1,16 @@
 <!doc type html>
+<!-- list of div tags:
+			 page0 is the title page
+			 page1 is the 'how to' page
+			 page2 is the user info page
+			 page3 is begin on beach
+			 page4 is begin in forest
+			 page5 is begin in cave
+			 page6 is to forest from beach
+			 page7 is to beach from forest
+			 page8 is to forest from cave
+			 page9 is to cave from forest
+-->
 	<html>
 		<head>
 			<title> Treasure Hunting Game </title>
@@ -52,7 +64,8 @@
 			How to Play the Game
 			</h2>
 			<p style="text-align:center">
-			Type in your responses to the questions. 
+			Read the screen and press the buttons that describe which choice you want to make.
+			If an alert message comes up, follow the instructions to unlock the choice you wanted to make.
 			If you need help during the game, press the help button, located in the bottom left.
 			<br>
 			<button id="TitlePage" onclick="changePage(1, 0)"> Return to Title Page </button>
@@ -103,8 +116,8 @@
 					onclick="talkOnBeach()">
 					Talk to Him
 				</button>
-				<button id="Forest"
-					onclick="forestFromBeach()">
+				<button id="ForestFromBeach"
+					onclick="changePage(3, 6)">
 					Go to Forest
 				</button>
 			</p>
@@ -119,8 +132,8 @@
 			 	You are in the forest. On your left, you can see the beach, but everywhere else is just trees. 
 				You hear a bear roar- time to act fast! Do you want to go to the beach or stay and look for protection?
 			<br>
-				<button id="Beach"
-					onclick="beachFromForest()">
+				<button id="BeachFromForest"
+					onclick="changePage(4, 7)">
 					Go to Beach
 				</button>
 				<button id="Protection"
@@ -140,15 +153,38 @@
 				There is an island inhabitant on the other side of the cave.
 				Do you want to talk to him or go through the forest?
 			<br>
-				<button id="Talk"
+				<button id="TalkInCave"
 						onclick="talkInCave()">
 					Talk to Him
 				</button>
-				<button id="Forest"
-						onclick="forestFromCave()">
+				<button id="ForestFromCave"
+						onclick="changePage(5, 8)">
 					Go through Forest
 				</button>
 			</p>
 		</div>
 
+		<div id="page6"
+			 style="background-color:green">
+			<h2 style="text-align:center">
+				The Forest
+			</h2>
+			<p style="text-align:center">
+				Welcome to the forest! Here, there are many dangerous animals- so be on the lookout!
+				There is a knife hidden in here that you can use for protection.
+				You see an island native foraging for fruits- maybe he knows how to find the protection!
+				Do you want to talk to him or continue to the cave?
+			<br>
+				<button id="TalkInForest"
+						onclick="talkInForest()">
+					Talk to Him
+				</button>
+				<button id="CaveFromForest"
+						onclick="changePage(6, 9)">
+					Go to the Cave
+				</button>
+			</p>
+		</div>
+				
+			
 	</html>
