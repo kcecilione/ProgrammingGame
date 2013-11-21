@@ -1,17 +1,21 @@
-function beginGame(){
-		var place = document.getElementById('placeBox').value;
-		if (place === 'beach'){
-			location.href="Beach.html"
-		}
-		if (place === 'forest'){
-			location.href="Forest.html"
-		}
-		if (place === 'cave'){
-			location.href="Cave.html"
-		}
+function changePage(curr, next) {
+      var next, currPage, nextPage;
+
+      currPage = document.getElementById('page' + curr);
+      nextPage = document.getElementById('page' + next);
+      
+      currPage.style.display = 'none';
+      nextPage.style.display = 'block';
 }
 
-function goToBeach(){
+
+function start() {
+      document.getElementById('page0').style.display = 'block';
+}
+
+
+function beachFromForest(){
+	
 		
 }
 
