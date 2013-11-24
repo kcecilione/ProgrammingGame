@@ -1,4 +1,10 @@
 <!doc type html>
+<!-- Kristen Cecilione and Patricia Barrett-->
+<!-- things to work on:
+		1. add object to keep track of objects the user has picked up
+		2. add arrays
+		3. fix 'enter info' button
+-->
 <!-- list of div tags:
 			 page0 is the title page
 			 page1 is the 'how to' page
@@ -82,7 +88,7 @@
 				Enter Gender: <input type="text" id="genderBox" size=10 value="">
 			<br>
 				<button id="EnterInfo"
-						onclick="document.getElementById('outputDiv').innerHTML=
+						onclick="document.getElementById('page2').innerHTML=
 						'Hello ' + document.getElementById('nameBox').value + '! ';">
 					Enter Information
 				</button>
@@ -130,7 +136,7 @@
 			 </h2>
 			 <p style="text-align:center">
 			 	You are in the forest. On your left, you can see the beach, but everywhere else is just trees. 
-				You hear a bear roar- time to act fast! Do you want to go to the beach or stay and look for protection?
+				You hear a bear growl- time to act fast! Do you want to go to the beach or stay and look for protection?
 			<br>
 				<button id="BeachFromForest"
 					onclick="changePage(4, 7)">
@@ -184,6 +190,42 @@
 					Go to the Cave
 				</button>
 			</p>
+		</div>
+		
+		<div id="page7"
+			 style="background-color:lightblue">
+			<h2 style="text-align:center">
+				The Beach
+			</h2>
+			<p style="text-align:center">
+				You are on the beach, safe from the bear! In order to find the knife in the forest, you have to locate the map.
+				There's an island native by the water! He's coming over to talk to you!
+			<br>
+				<button id="TalkOnBeach"
+						onclick="talkOnBeach2()">
+					Talk to Him
+				</button>
+			</p>
+		</div>
+		
+		<div id="page8"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	You are in the forest. To your right is the cave and to your left is the beach.
+			 	You hear a bear growl- better act fast! Do you want to look for protection or continue to the beach?
+			 <br>
+			 	<button id="BeachFromForest"
+			 			onclick="changePage(8,7)">
+			 		Go to Beach
+			 	</button>
+			 	<button id="FindProtection"
+			 			onclick="findProtection()">
+			 		Find Protection
+			 	</button>
+			 </p>
 		</div>
 				
 			
