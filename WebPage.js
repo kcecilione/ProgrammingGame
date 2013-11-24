@@ -30,10 +30,6 @@ function findProtection(){
 	alert('In order to find protection, you need to find the map, located on the beach!')
 }
 
-function talkOnBeach(){
-	document.getElementById('page3').innerHTML=
-		'Hello. My name is Holokai. Are you looking for the map?'
-}
 
 function forestFromBeach(){
 

@@ -4,6 +4,7 @@
 		1. add object to keep track of objects the user has picked up
 		2. add arrays
 		3. fix 'enter info' button
+		4. help button
 -->
 <!-- list of div tags:
 			 page0 is the title page
@@ -16,6 +17,14 @@
 			 page7 is to beach from forest
 			 page8 is to forest from cave
 			 page9 is to cave from forest
+			 page10 is talk on the beach 
+			 page11 is need the map
+			 page12 is don't need the map
+			 page13 is talk in the forest
+			 page14 is need protection
+			 page15 is don't need protection
+			 page16 is talk in the cave
+			 page17 is look at the map
 -->
 	<html>
 		<head>
@@ -119,7 +128,7 @@
 				You see an island inhabitant down the shore. Do you want to talk to him or go to the forest?
 			<br>
 				<button id="Talk"
-					onclick="talkOnBeach()">
+					onclick="changePage(3, 10)">
 					Talk to Him
 				</button>
 				<button id="ForestFromBeach"
@@ -182,7 +191,7 @@
 				Do you want to talk to him or continue to the cave?
 			<br>
 				<button id="TalkInForest"
-						onclick="talkInForest()">
+						onclick="changePage(6, 13)">
 					Talk to Him
 				</button>
 				<button id="CaveFromForest"
@@ -227,6 +236,145 @@
 			 	</button>
 			 </p>
 		</div>
-				
-			
+		
+		<div id="page9"
+			 style="background-color:grey">
+			 <h2 style="text-align:center">
+			 	The Cave
+			 </h2>
+			 <p style="text-align:center">
+			 	You are in the cave. If you go outside, the forest will lead you to the beach.
+				There is an island inhabitant on the other side of the cave.
+				Do you want to talk to him or look at the map?
+			<br>
+				<button id="talkInCave"
+						onclick="changePage(9, 16)">
+					Talk to Him
+				</button>
+				<button id="lookAtMap"
+						onclick="changePage(9, 17)">
+					Look at Map
+				</button>
+			</p>
+		</div>
+		
+		<div id="page10"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Hello! My name is Holokai. Are you looking for the map?
+			 <br>
+			 	<button id="yes"
+			 			onclick="changePage(10, 11)">
+			 		Yes
+			 	</button>
+			 	<button id="no"
+			 			onclick="changePage(10,12)">
+			 		No
+			 	</button>
+			 </p>
+		</div>		
+		
+		<div id="page11"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Then you're in luck! Here's the map- use it to find objects that will be useful.
+			 	If you need help, feel free to come back to talk to me, or find my friends in the forest and cave.
+			 	Good luck!
+			 <br>
+			 	<button id="toForest"
+			 			onclick="changePage(11, 6)">
+			 		Go to Forest
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page12"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Ok! Then here are some tips to help you find the treasure!
+			 	First, if you don't already have the map, you will need to get it before moving on.
+			 	Second, talk to my friends in the forest and cave- they will be able to give you helpful objects and advice.
+			 	Third, remember to be careful in the forest! There are many dangerous animals there!
+			 	Good luck!
+			 <br>
+			 	<button id="getMap"
+			 			onclick="changePage(12, 11)">
+			 		Need Map
+			 	</button>
+			 	<button id="toForest"
+			 			onclick="changePage(12, 6)">
+			 		Go to Forest
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page13"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	Hello, my name is Kekoa! I must warn you- the forest can be a dangerous place!
+			 	I have something you could use for protection! Do you need it?
+			 <br>
+			 	<button id="yes"
+			 			onclick="changePage(13, 14)">
+			 		Yes
+			 	</button>
+			 	<button id="no"
+			 			onclick="changePage(13, 15)">
+			 		No
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page14"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	You're in luck! I have a spare knife that I can give you! 
+			 	Whenever you come across an animal, just take this out, and they'll run away.
+			 	Good luck!
+			 <br>
+			 	<button id="toCave"
+			 			onclick="changePage(14, 9)">
+			 		Go to Cave
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page15"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	Ok! Then here are some tips to help you find the treasure!
+			 	First, if you don't already have the protection, you will need to get it to travel through the forest.
+			 	Second, talk to my friends on the beach and in the cave- they will be able to give you helpful objects and advice.
+			 	Third, remember to be careful here! There are many dangerous animals roaming around!
+			 	Good luck!
+			 <br>
+			 	<button id="toCave"
+			 			onclick="changePage(15, 9)">
+			 		Go to Cave
+			 	</button>
+			 	<button id="getProtection"
+			 			onclick="changePage(15, 14)">
+			 		Need Protection
+			 	</button>
+			 </p>
+		</div>
+		
 	</html>
