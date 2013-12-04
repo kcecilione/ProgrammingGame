@@ -32,6 +32,14 @@ function findProtection(){
 	}
 }
 
+function protectionAlert(){
+	alert('You need protection to travel through the forest! It\'s dangerous!')
+}
+
+function nothingAlert(){
+	alert('Nothing here! Try somewhere else')
+}
+
 function takeKnife(){
 	hasKnife = true
 }

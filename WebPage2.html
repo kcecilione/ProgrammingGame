@@ -1,0 +1,666 @@
+<!doc type html>
+<!-- Kristen Cecilione and Patricia Barrett-->
+<!-- things to work on:
+		1. add arrays- can use for items the player has (store t/f booleans)
+		2. fix 'enter info' button
+-->
+<!-- Div Tags if Starting from Beach:
+			 page0 is the title page
+			 page1 is the 'how to' page
+			 page2 is the user info page
+			 page3 is begin on beach
+			 page4 is talk on beach
+			 page5 is need map
+			 page6 is forest from beach
+			 page7 is talk in forest
+			 page8 is need knife
+			 page9 is don't need knife
+			 page10 is cave from forest
+			 page11 is talk in cave
+			 page12 is map from cave
+			 page13 is need the shovel
+			 page14 is forest from cave
+			 page15 is take out knife
+			 page16 is beach from forest
+			 page17 is map from forest
+			 page18 is talk to Holokai
+			 page19 is map from beach
+			 page20 is need help finding treasure
+			 page21 is don't need help
+			 page22 is follow Holokai's directions
+			 page23 is find treasure on your own
+			 page24 is dig near forest
+			 page25 is keep walking
+			 page26 is ask Kekoa
+			 page27 is Kekoa's directions
+			 page28 is follow Kekoa's directions
+			 page29 is see a bear
+			 page30 is find opening in forest
+			 page31 is found the treasure
+
+-->
+	<html>
+		<head>
+			<title> Treasure Hunting Game </title>
+			<script type="text/javascript" src="WebPage.js"></script>
+			<style type="text/css">
+    			   body { text-align: center; }
+    			   div { display: none; }
+ 			</style>
+
+		</head>
+		<body style="background-color:lightgrey" onload="start();"> 
+		<h1 style="text-align:center"> 
+				<img src="http://www.clker.com/cliparts/e/5/2/8/1195430727372284989eady_Treasure_Map.svg.med.png"
+					alt="Map"
+					height="250" width="250">
+				Treasure Hunting Game	
+				<img src="http://clipartlog.com/wp-content/uploads/2008/06/treasure-chest-large.png"
+					alt="Treasure"
+					height="250" width="250">
+		</h1>
+
+
+		<div id="page0">
+			<h2 style="text-align:center">
+				Background Story
+			</h2>
+			<p style="text-align:center">
+				After your latest skydiving adventure, you happened to land on an island unknown to anyone on the plane.
+				The plane flew on, leaving you on this island by yourself.
+				To get back home, explore the island in search for the buried treasure.
+				Once you find this, you will be able to offer it to the island inhabitants in return for a trip home.
+				Interact with them to get hints on where to go and advice on how to get there.
+				Beware of the animals in the jungle- make sure you have protection!
+				Good luck!
+			</p>
+			<h4 style="text-align:center">
+				<button id="How To Play"
+					onclick="changePage(0,1);">
+					How to Play
+				</button>
+				<button id="Begin Game"
+					onclick="changePage(0,2);">
+					Begin Game
+				</button>
+				<div id="outputDiv" style="display:none"</div>
+			</h4>
+		</div>
+
+		<div id="page1">
+			<h2 style="text-align:center">
+			How to Play the Game
+			</h2>
+			<p style="text-align:center">
+			Read the screen and press the buttons that describe which choice you want to make.
+			If an alert message comes up, follow the instructions to unlock the choice you wanted to make.
+			If you need help during the game, find the map and use it for tips.
+			<br>
+			<button id="TitlePage" onclick="changePage(1, 0)"> Return to Title Page </button>
+			<button id="GamePage" onclick="changePage(1, 2)"> Return to Game </button>
+			</p>
+		</div>
+		
+		<div id="page2">
+			<h2 style="text-align:center">
+				User Information
+			</h2>
+			<p style="text-align:center">
+				Enter User Name: <input type="text" id="nameBox" size=10 value="">
+				Enter Gender: <input type="text" id="genderBox" size=10 value="">
+			<br>
+				<button id="enterInfo"
+						onclick="">
+					Enter Information
+				</button>
+			<br>
+				Where would you like to begin?
+				<button id="Beach"
+						onclick="changePage(2,3)">
+					Click here for the Beach
+				</button>
+			</p>
+		</div>
+
+		<div id="page3"
+			 style="background-color:lightblue">
+			<h2 style="text-align:center">
+				The Beach
+			</h2>
+			<p style="text-align:center">
+				You are on the beach! There is the ocean on your left and a forest to the right.
+				You see an island inhabitant down the shore - he probably has a map! You should talk to him.
+			<br>
+				<button id="Talk"
+					onclick="changePage(3, 4)">
+					Talk to Him
+				</button>
+			</p>
+		</div>
+		
+		<div id="page4"
+			 style="background-color:lightblue">
+		  	<h2 style="text-align:center">
+			 	The Beach
+		  	</h2>
+		  	<p style="text-align:center">
+			 	Hello! My name is Holokai. Are you looking for the map?
+			<br>
+				<button id="yes"
+			 		onclick="changePage(4, 5)">
+			 		Yes
+				</button>
+		 	</p>
+		</div>
+		
+		<div id="page5"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Then you're in luck! Here's the map- use it to find objects that will be useful.
+			 	If you need help, feel free to come back to talk to me, or find my friends in the forest and cave.
+			 	Good luck!
+			 <br>
+			 	<button id="toForest"
+			 			onclick="changePage(5, 6)">
+			 		Go to Forest
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page6"
+			 style="background-color:green">
+			<h2 style="text-align:center">
+				The Forest
+			</h2>
+			<p style="text-align:center">
+				Welcome to the forest! Here, there are many dangerous animals- so be on the lookout!
+				There is a knife hidden in here that you can use for protection.
+				You see an island native foraging for fruits- maybe he knows how to find the protection!
+				Do you want to talk to him or continue to the cave?
+			<br>
+				<button id="TalkInForest"
+						onclick="changePage(6, 7)">
+					Talk to Him
+				</button>
+				<button id="CaveFromForest"
+						onclick="protectionAlert()">
+					Go to the Cave
+				</button>
+			</p>
+		</div>
+		
+		<div id="page7"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	Hello, my name is Kekoa! I must warn you- the forest can be a dangerous place!
+			 	I have something you could use for protection! Do you need it?
+			 <br>
+			 	<button id="yes"
+			 			onclick="changePage(7, 8)">
+			 		Yes
+			 	</button>
+			 	<button id="no"
+			 			onclick="changePage(7, 9)">
+			 		No
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page8"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	You're in luck! I have a spare knife that I can give you! 
+			 	Whenever you come across an animal, just take this out, and they'll run away.
+			 	Good luck!
+			 <br>
+			 	<button id="toCave"
+			 			onclick="changePage(8, 10)">
+			 		Go to Cave
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page9"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	Ok! Then here are some tips to help you find the treasure!
+			 	First, if you don't already have the protection, you will need to get it to travel through the forest.
+			 	Second, talk to my friends on the beach and in the cave- they will be able to give you helpful objects and advice.
+			 	Third, remember to be careful here! There are many dangerous animals roaming around!
+			 	Good luck!
+			 <br>
+			 	<button id="toCaveFromForest"
+			 			onclick="protectionAlert()">
+			 		Go to Cave
+			 	</button>
+			 	<button id="getProtection"
+			 			onclick="changePage(9, 8)">
+			 		Need Protection
+			 	</button>
+			 </p>
+		</div>
+
+		<div id="page10"
+			 style="background-color:grey">
+			 <h2 style="text-align:center">
+			 	The Cave
+			 </h2>
+			 <p style="text-align:center">
+			 	You are in the cave. If you go outside, the forest will lead you to the beach.
+				There is an island inhabitant on the other side of the cave.
+				Do you want to talk to him or look at the map?
+			<br>
+				<button id="talkInCave"
+						onclick="changePage(10, 11)">
+					Talk to Him
+				</button>
+				<button id="lookAtMap"
+						onclick="changePage(10, 12)">
+					Look at Map
+				</button>
+			</p>
+		</div>
+		
+		<div id="page11"
+			 style="background-color:grey">
+			 <h2 style="text-align:center">
+			 	The Cave
+			 </h2>
+			 <p style="text-align:center">
+			 	Hello, my name is Anuhea! Welcome to the cave! 
+			 	If you leave here, you must go through the forest to reach the beach, but remember to be careful!
+			 	Do you need help finding the treasure?
+			 <br> 
+			 	<button id="Yes"
+			 			onclick="changePage(11,13)">
+			 		Yes
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page12"
+			 style="background-color:brown">
+			 <h2 style="text-align:center">
+			 	The Map
+			 </h2>
+			 <p style="text-align:center">
+			 	This map will to give helpful tips, locations of necessary objects, and locations of helpful people to talk to.
+			 <br>
+			 	Holokai stays on the beach, and he will offer helpful information for finding the treasure and how to get there.
+			 	Kekoa is in the forest, and he has the knife.
+			 	This will allow you to travel in and out of the forest with ease.
+			 	Anuhea is in the cave, and he has the shovel. This is necessary for digging for the treasure.
+			 	You must collect all three objects (the map, the knife, and the shovel) in order to begin searching for the treasure.
+			 	The treasure is located on the beach; talk to Holokai if you need help finding it.
+			 <br>
+			 	<button id="toCave"
+			 			onclick="changePage(12, 10)">
+			 		Back to the Cave
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page13"
+			 style="background-color:grey">
+			 <h2 style="text-align:center">
+			 	The Cave
+			 </h2>
+			 <p style="text-align:center">
+			 	You're in luck! I have a shovel that I can lend you!
+			 	Use this to dig for the treasure - use the map to find where to dig!
+			 	Good luck and feel free to talk to me or my friends in the forest and on the beach for help!
+			 <br>
+			 	<button id="toForest"
+			 			onclick="changePage(13,14)">
+			 		Go to Forest
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page14"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	You enter the forest and see a bear! Quick - show him you have a knife so he'll run away!
+			<br>
+				<button id="knife"
+						onclick="changePage(14,15)">
+					Take out Knife
+				</button>
+			</p>
+		</div>
+		
+		<div id="page15"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	He ran away! Good thing you had the knife that Kekoa gave you!
+			 	Now that that's over, do you want to go to the beach or look at your map?
+			<br>
+				<button id="beach"
+						onclick="changePage(15,16)">
+					Go to Beach
+				</button>
+				<button id="map"
+						onclick="changePage(15,17)">
+					Look at Map
+				</button
+			</p>
+		</div>
+		
+		<div id="page16"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Welcome back to the beach! Would you like to look at the map or talk to Holokai?
+			 <br>
+			 	<button id="talk"
+			 			onclick="changePage(16,18)">
+			 		Talk to Holokai
+			 	</button>
+			 	<button id="map"
+			 			onclick="changePage(16,19)">
+			 		Look at Map
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page17"
+			 style="background-color:brown">
+			 <h2 style="text-align:center">
+			 	The Map
+			 </h2>
+			 <p style="text-align:center">
+			 	This map will to give helpful tips, locations of necessary objects, and locations of helpful people to talk to.
+			 <br>
+			 	Holokai stays on the beach, and he will offer helpful information for finding the treasure and how to get there.
+			 	Kekoa is in the forest, and he has the knife.
+			 	This will allow you to travel in and out of the forest with ease.
+			 	Anuhea is in the cave, and he has the shovel. This is necessary for digging for the treasure.
+			 	You must collect all three objects (the map, the knife, and the shovel) in order to begin searching for the treasure.
+			 	The treasure is located on the beach; talk to Holokai if you need help finding it.
+			 <br>
+			 	<button id="toForest"
+			 			onclick="changePage(17, 15)">
+			 		Back to the Forest
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page18"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Hello! Do you need help finding the treasure?
+			 <br>
+			 	<button id="talk"
+			 			onclick="changePage(18, 20)">
+			 		Yes
+			 	</button>
+			 	<button id="map"
+			 			onclick="changePage(18, 21)">
+			 		No
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page19"
+			 style="background-color:brown">
+			 <h2 style="text-align:center">
+			 	The Map
+			 </h2>
+			 <p style="text-align:center">
+			 	This map will to give helpful tips, locations of necessary objects, and locations of helpful people to talk to.
+			 <br>
+			 	Holokai stays on the beach, and he will offer helpful information for finding the treasure and how to get there.
+			 	Kekoa is in the forest, and he has the knife.
+			 	This will allow you to travel in and out of the forest with ease.
+			 	Anuhea is in the cave, and he has the shovel. This is necessary for digging for the treasure.
+			 	You must collect all three objects (the map, the knife, and the shovel) in order to begin searching for the treasure.
+			 	The treasure is located on the beach; talk to Holokai if you need help finding it.
+			 <br>
+			 	<button id="toBeach"
+			 			onclick="changePage(19, 16)">
+			 		Back to the Beach
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page20"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Ok! I'll see if I can be of assistance!
+			 	I do not know the exact location of the treasure, but I can lead you in the right direction.
+			 	Go North up the beach until you see the opening in the forest.
+			 	Once you see this opening, walk towards the forest and dig - the treasure will be on the outskirts of the forest.
+			 	If you forget my directions, feel free to come back and ask again!
+			 <br>
+			 	<button id="directions"
+			 			onclick="changePage(20, 22)">
+			 		Follow Directions
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page21"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Ok! Feel free to walk around the beach and dig wherever you want - that's the only way you'll find the treasure.
+			 	Come back and talk to me if you need help.
+			 	Good luck!
+			 <br>
+			 	<button id="look"
+			 			onclick="changePage(21, 23)">
+			 		Look for Treasure
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page22"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	You have walked North for a while and have finally found the opening in the forest!
+			 	Do you want to dig here or closer to the forest?
+			 <br>
+			 	<button id="here"
+			 			onclick="nothingAlert()">
+			 		Dig Here
+			 	</button>
+			 	<button id="forest"
+			 			onclick="changePage(22, 24)">
+			 		Dig Near the Forest
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page23"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Time to look for the treasure! Do you want to dig here and check or keep walking up the beach?
+			 <br>
+			 	<button id="dig"
+			 			onclick="nothingAlert()">
+			 		Dig Here
+			 	</button>
+			 	<button id="walk"
+			 			onclick="changePage(23, 25)">
+			 		Walk up the Beach
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page24"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	You walk towards the forest and stop at the outskirts -
+			 	do you want to dig here or go back and ask Holokai for directions again?
+			 <br>
+			 	<button id="dig"
+			 			onclick="changePage(24, 26)">
+			 		Dig Here
+			 	</button>
+			 	<button id="directions"
+			 			onclick="changePage(24, 20)">
+			 		Ask for Directions
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page25"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	You have walked up the beach and see an opening in the forest.
+			 	Do you want to go there and ask Kekoa for help, dig here, or go back and ask Holokai?
+			 <br>
+			 	<button id="Kekoa"
+			 			onclick="changePage(25, 26)">
+			 		Ask Kekoa
+			 	</button>
+			 	<button id="dig"
+			 			onclick="nothingAlert()">
+			 		Dig Here
+			 	</button>
+			 	<button id="Holokai"
+			 			onclick="changePage(25, 20)">
+			 		Ask Holokai
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page26"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	Hello! Do you need help finding the treasure?
+			<br>
+				<button id="yes"
+						onclick="changePage(26, 27)">
+					Yes
+				</button>
+			</p>
+		</div>
+		
+		<div id="page27"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	Ok! There are two openings in the forest - 
+			 	from one, you will see Holokai and from the other you will see just the beach and ocean.
+			 	Leave the forest from the opening where you don't see Holokai, and dig right there - the treasure will be there.
+			 	If you forget my directions, feel free to come back and ask me again!
+			 	Good luck!
+			<br>
+				<button id="directions"
+						onclick="changePage(27, 28)">
+					Follow Directions
+				</button>
+			</p>
+		</div>
+		
+		<div id="page28"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	You keep walking and find an opening! 
+			 	You look and see Holokai - do you want to go to the beach and talk to him or keep walking?
+			<br>
+				<button id="beach"
+						onclick="changePage(28,20)">
+					Talk to Holokai
+				</button>
+				<button id="walk"
+						onclick="changePage(28,29)">
+					Keep Walking
+				</button>
+			</p>
+		</div>
+		
+		<div id="page29"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	You keep walking and see a bear! Pull out your knife for protection!
+			<br>
+				<button id="knife"
+						onclick="changePage(29,30)">
+					Take out Knife
+				</button>
+			</p>
+		</div>
+		
+		<div id="page30"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	He ran away! Good thing you had your knife! You keep walking and finally see the ocean! 
+			 	Do you want to go out and dig or go ask Kekoa for his directions again?
+			<br>
+				<button id="dig"
+						onclick="changePage(30,31)">
+					Dig
+				</button>
+				<button id="Kekoa"
+						onclick="changePage(30, 27)">
+					Ask Kekoa
+				</button>
+			</p>
+		</div>
+		
+		<div id="page31"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Congratulations! You've found the treasure! Now you can get back home!
+			 <br>
+			 </p>
+		</div>

@@ -18,14 +18,14 @@
 			 page9 is to cave from forest
 			 page10 is talk on the beach 
 			 page11 is need the map
-			 page12 is don't need the map
+			 
 			 page13 is talk in the forest
 			 page14 is need protection
 			 page15 is don't need protection
 			 page16 is talk in the cave
 			 page17 is look at the map
 			 page18 is need shovel
-			 page19 is don't need shovel
+
 			 page20 is taking the forest from the cave to the beach
 			 page21 is the beach to find the treasure
 -->
@@ -127,15 +127,11 @@
 			</h2>
 			<p style="text-align:center">
 				You are on the beach! There is the ocean on your left and a forest to the right.
-				You see an island inhabitant down the shore. Do you want to talk to him or go to the forest?
+				You see an island inhabitant down the shore - he probably has a map! You should talk to him.
 			<br>
 				<button id="Talk"
 					onclick="changePage(3, 10)">
 					Talk to Him
-				</button>
-				<button id="ForestFromBeach"
-					onclick="changePage(3, 6)">
-					Go to Forest
 				</button>
 			</p>
 		</div>
@@ -268,10 +264,6 @@
 			 			onclick="changePage(10, 11)">
 			 		Yes
 			 	</button>
-			 	<button id="no"
-			 			onclick="changePage(10,12)">
-			 		No
-			 	</button>
 			 </p>
 		</div>		
 		
@@ -287,29 +279,6 @@
 			 <br>
 			 	<button id="toForest"
 			 			onclick="changePage(11, 6)">
-			 		Go to Forest
-			 	</button>
-			 </p>
-		</div>
-		
-		<div id="page12"
-			 style="background-color:lightblue">
-			 <h2 style="text-align:center">
-			 	The Beach
-			 </h2>
-			 <p style="text-align:center">
-			 	Ok! Then here are some tips to help you find the treasure!
-			 	First, if you don't already have the map, you will need to get it before moving on.
-			 	Second, talk to my friends in the forest and cave- they will be able to give you helpful objects and advice.
-			 	Third, remember to be careful in the forest! There are many dangerous animals there!
-			 	Good luck!
-			 <br>
-			 	<button id="getMap"
-			 			onclick="changePage(12, 11)">
-			 		Need Map
-			 	</button>
-			 	<button id="toForest"
-			 			onclick="changePage(12, 6)">
 			 		Go to Forest
 			 	</button>
 			 </p>
@@ -389,10 +358,6 @@
 			 			onclick="changePage(16,18)">
 			 		Yes
 			 	</button>
-			 	<button id="No"
-			 			onclick="changePage(16,19)">
-			 		No
-			 	</button>
 			 </p>
 		</div>
 		
@@ -439,29 +404,6 @@
 			 	<button id="toForest"
 			 			onclick="changePage(18,20)">
 			 		Go to Forest
-			 	</button>
-			 </p>
-		</div>
-		
-		<div id="page19"
-			 style="background-color:grey">
-			 <h2 style="text-align:center">
-			 	The Cave
-			 </h2>
-			 <p style="text-align:center">
-			 	Ok! Then here are some tips to help you find the treasure!
-			 	First, if you don't already have a shovel, you will need it in order to dig for the treasure!
-			 	Second, talk to my friends on the beach and in the forest- they will be able to give you helpful objects and advice.
-			 	Third, remember to always be careful in the forest, and make sure you have protection!
-			 	Good luck!
-			 <br>
-			 	<button id="toForest"
-			 			onclick="changePage(19, 20)">
-			 		Go to Forest
-			 	</button>
-			 	<button id="needShovel"
-			 			onclick="changePage(19,18)">
-			 		Need the Shovel
 			 	</button>
 			 </p>
 		</div>
