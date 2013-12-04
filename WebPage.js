@@ -20,27 +20,24 @@ function createUser(){
 		name: nameString,
 		gender: genderString,
 		};
-
 }
 
-
-
+var hasMap = false
+var hasKnife = false
+var hasShovel = false
 
 function findProtection(){
-	alert('In order to find protection, you need to find the map, located on the beach!')
+	if (hasMap === false){
+		alert('In order to find protection, you need to find the map, located on the beach!')
+	}
 }
 
-
-function forestFromBeach(){
-
+function takeKnife(){
+	hasKnife = true
 }
 
-function talkInCave(){
-
-}
-
-function forestFromCave(){
-
+function goToBeach(){
+	alert('In order to go to the beach, you need protection to get through the forest!')
 }
 
 function talkOnBeach2(){

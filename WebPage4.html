@@ -1,10 +1,9 @@
 <!doc type html>
 <!-- Kristen Cecilione and Patricia Barrett-->
 <!-- things to work on:
-		1. add object to keep track of objects the user has picked up
-		2. add arrays
-		3. fix 'enter info' button
-		4. help button
+		1. add arrays- can use for items the player has (store t/f booleans)
+		2. fix 'enter info' button
+		3. if statement for beach button- comment later in code
 -->
 <!-- list of div tags:
 			 page0 is the title page
@@ -25,6 +24,10 @@
 			 page15 is don't need protection
 			 page16 is talk in the cave
 			 page17 is look at the map
+			 page18 is need shovel
+			 page19 is don't need shovel
+			 page20 is taking the forest from the cave to the beach
+			 page21 is the beach to find the treasure
 -->
 	<html>
 		<head>
@@ -81,7 +84,7 @@
 			<p style="text-align:center">
 			Read the screen and press the buttons that describe which choice you want to make.
 			If an alert message comes up, follow the instructions to unlock the choice you wanted to make.
-			If you need help during the game, press the help button, located in the bottom left.
+			If you need help during the game, find the map and use it for tips.
 			<br>
 			<button id="TitlePage" onclick="changePage(1, 0)"> Return to Title Page </button>
 			<button id="GamePage" onclick="changePage(1, 2)"> Return to Game </button>
@@ -96,9 +99,8 @@
 				Enter User Name: <input type="text" id="nameBox" size=10 value="">
 				Enter Gender: <input type="text" id="genderBox" size=10 value="">
 			<br>
-				<button id="EnterInfo"
-						onclick="document.getElementById('page2').innerHTML=
-						'Hello ' + document.getElementById('nameBox').value + '! ';">
+				<button id="enterInfo"
+						onclick="">
 					Enter Information
 				</button>
 			<br>
@@ -211,7 +213,7 @@
 				There's an island native by the water! He's coming over to talk to you!
 			<br>
 				<button id="TalkOnBeach"
-						onclick="talkOnBeach2()">
+						onclick="changePage(7,10)">
 					Talk to Him
 				</button>
 			</p>
@@ -224,15 +226,11 @@
 			 </h2>
 			 <p style="text-align:center">
 			 	You are in the forest. To your right is the cave and to your left is the beach.
-			 	You hear a bear growl- better act fast! Do you want to look for protection or continue to the beach?
+			 	You hear a bear growl- better act fast! Go to the beach for safety!
 			 <br>
 			 	<button id="BeachFromForest"
 			 			onclick="changePage(8,7)">
 			 		Go to Beach
-			 	</button>
-			 	<button id="FindProtection"
-			 			onclick="findProtection()">
-			 		Find Protection
 			 	</button>
 			 </p>
 		</div>
@@ -377,4 +375,135 @@
 			 </p>
 		</div>
 		
+		<div id="page16"
+			 style="background-color:grey">
+			 <h2 style="text-align:center">
+			 	The Cave
+			 </h2>
+			 <p style="text-align:center">
+			 	Hello, my name is Anuhea! Welcome to the cave! 
+			 	If you leave here, you must go through the forest to reach the beach, but remember to be careful!
+			 	Do you need help finding the treasure?
+			 <br> 
+			 	<button id="Yes"
+			 			onclick="changePage(16,18)">
+			 		Yes
+			 	</button>
+			 	<button id="No"
+			 			onclick="changePage(16,19)">
+			 		No
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page17"
+			 style="background-color:brown">
+			 <h2 style="text-align:center">
+			 	The Map
+			 </h2>
+			 <p style="text-align:center">
+			 	This map will to give helpful tips, locations of necessary objects, and locations of helpful people to talk to.
+			 <br>
+			 	Holokai stays on the beach, and he will offer helpful information for finding the treasure and how to get there.
+			 	Kekoa is in the forest, and he has the knife.
+			 	This will allow you to travel in and out of the forest with ease.
+			 	Anuhea is in the cave, and he has the shovel. This is necessary for digging for the treasure.
+			 	You must collect all three objects (the map, the knife, and the shovel) in order to begin searching for the treasure.
+			 	The treasure is located on the beach; talk to Holokai if you need help finding it.
+			 <br>
+			 	<button id="toBeach"
+			 			onclick="changePage(17,21)">
+			 		Go to the Beach
+			 	</button>
+			 	<button id="toForest"
+			 			onclick="changePage(17,20)">
+			 		Go to the Forest
+			 	</button>
+			 	<button id="toCave"
+			 			onclick="changePage(17, 9)">
+			 		Go to the Cave
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page18"
+			 style="background-color:grey">
+			 <h2 style="text-align:center">
+			 	The Cave
+			 </h2>
+			 <p style="text-align:center">
+			 	You're in luck! I have a shovel that I can lend you!
+			 	Use this to dig for the treasure - use the map to find where to dig!
+			 	Good luck and feel free to talk to me or my friends in the forest and on the beach for help!
+			 <br>
+			 	<button id="toForest"
+			 			onclick="changePage(18,20)">
+			 		Go to Forest
+			 	</button>
+			 </p>
+		</div>
+		
+		<div id="page19"
+			 style="background-color:grey">
+			 <h2 style="text-align:center">
+			 	The Cave
+			 </h2>
+			 <p style="text-align:center">
+			 	Ok! Then here are some tips to help you find the treasure!
+			 	First, if you don't already have a shovel, you will need it in order to dig for the treasure!
+			 	Second, talk to my friends on the beach and in the forest- they will be able to give you helpful objects and advice.
+			 	Third, remember to always be careful in the forest, and make sure you have protection!
+			 	Good luck!
+			 <br>
+			 	<button id="toForest"
+			 			onclick="changePage(19, 20)">
+			 		Go to Forest
+			 	</button>
+			 	<button id="needShovel"
+			 			onclick="changePage(19,18)">
+			 		Need the Shovel
+			 	</button>
+			 </p>
+		</div>
+
+		<div id="page20"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	Welcome to the forest! Here, there are many dangerous animals- so be on the lookout!
+				There is a knife hidden in here that you can use for protection.
+				You see an island native foraging for fruits- maybe he knows how to find the protection!
+				Do you want to talk to him or continue to the beach?
+			<br>
+				<button id="talk"
+						onclick="changePage(20,13)">
+					Talk to Him
+				<button id="beach"
+						onclick="goToBeach()">
+					<!--need to make if statement (cannot go to beach if they don't have protection)-->
+					Continue to Beach
+				</button>
+			</p>
+		</div>
+		
+		<div id="page21"
+			 style="background-color:lightblue">
+			 <h2 style="text-align:center">
+			 	The Beach
+			 </h2>
+			 <p style="text-align:center">
+			 	Welcome back to the beach! Would you like to look at the map or talk to Holokai?
+			 <br>
+			 	<button id="talk"
+			 			onclick="changePage(21,22)">
+			 		Talk to Holokai
+			 	</button>
+			 	<button id="map"
+			 			onclick="changePage(21,17)">
+			 		Map
+			 	</button>
+			 </p>
+		</div>
 	</html>
