@@ -3,6 +3,7 @@
 <!-- things to work on:
 		1. add arrays- can use for items the player has (store t/f booleans)
 		2. fix 'enter info' button
+		3. add username to conversations with island natives
 -->
 <!-- Div Tags if Starting from Beach:
 			 page0 is the title page
@@ -37,7 +38,9 @@
 			 page29 is see a bear
 			 page30 is find opening in forest
 			 page31 is found the treasure
-
+			 page32 is end of game
+			 page33 is start in forest
+			 page34 is to beach from forest
 -->
 	<html>
 		<head>
@@ -117,7 +120,19 @@
 				Where would you like to begin?
 				<button id="Beach"
 						onclick="changePage(2,3)">
-					Click here for the Beach
+					The Beach
+				</button>
+				<button id="Forest"
+						onclick="changePage(2,33)">
+					The Forest
+				</button>
+				<button id="Cave"
+						onclick="changePage(2,35)">
+					The Cave
+				</button>
+				<button id="Random"
+						onclick="">
+					Choose for Me
 				</button>
 			</p>
 		</div>
@@ -531,7 +546,7 @@
 			 	do you want to dig here or go back and ask Holokai for directions again?
 			 <br>
 			 	<button id="dig"
-			 			onclick="changePage(24, 26)">
+			 			onclick="changePage(24, 31)">
 			 		Dig Here
 			 	</button>
 			 	<button id="directions"
@@ -655,12 +670,64 @@
 		</div>
 		
 		<div id="page31"
-			 style="background-color:lightblue">
+			 style="background-color:cyan">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	Congratulations!
 			 </h2>
 			 <p style="text-align:center">
 			 	Congratulations! You've found the treasure! Now you can get back home!
 			 <br>
+			 <button id="endgame"
+			 		 onclick="changePage(31,32)">
+			 	Go Home!
+			 </button>
 			 </p>
+		</div>
+		
+		<div id="page32"
+			 style="background-color:pink">
+			 <h2 style="text-align:center">
+			 	The End!
+			 </h2>
+			 <p style="text-align:center">
+			 	<img src="http://touque.ca/EC/ICS3U/students/2011-02/ICS3U2C/HuangJ/Images/cartoon-airplane.png"
+					alt="Treasure"
+					height="250" width="300">
+			 </p>
+		</div>
+		
+		<div id="page33"
+			 style="background-color:green">
+			 <h2 style="text-align:center">
+			 	The Forest
+			 </h2>
+			 <p style="text-align:center">
+			 	You are in the forest. On your left, you can see the beach, but everywhere else is just trees. 
+				You hear a bear growl- time to act fast! Do you want to go to the beach or stay and look for protection?
+			<br>
+				<button id="BeachFromForest"
+					onclick="changePage(33, 34)">
+					Go to Beach
+				</button>
+				<button id="Protection"
+					onclick="findProtection()">
+					Find Protection
+				</button>
+			</p>
+		</div>
+		
+		<div id="page34"
+			 style="background-color:lightblue">
+			<h2 style="text-align:center">
+				The Beach
+			</h2>
+			<p style="text-align:center">
+				You are on the beach, safe from the bear! In order to find the knife in the forest, you have to locate the map.
+				There's an island native by the water! He's coming over to talk to you!
+			<br>
+				<button id="TalkOnBeach"
+						onclick="changePage(34,4)">
+					Talk to Him
+				</button>
+			</p>
 		</div>

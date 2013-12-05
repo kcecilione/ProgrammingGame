@@ -24,7 +24,12 @@ function createUser(){
 
 var hasMap = false
 var hasKnife = false
-var hasShovel = false
+var hasShovel= false
+var characterobjects = new Array();
+	characterobjects[0] = "hasMap";
+	characterobjects[1] = "hasKnife";
+	characterobjects[2] = "hasShovel";
+
 
 function findProtection(){
 	if (hasMap === false){
@@ -46,9 +51,4 @@ function takeKnife(){
 
 function goToBeach(){
 	alert('In order to go to the beach, you need protection to get through the forest!')
-}
-
-function talkOnBeach2(){
-	document.getElementById('page7').innerHTML=
-		'Hello. My name is Holokai. Are you looking for the map?'
 }
