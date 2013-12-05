@@ -1,11 +1,9 @@
 <!doc type html>
 <!-- Kristen Cecilione and Patricia Barrett-->
 <!-- things to work on:
-		1. add arrays- can use for items the player has (store t/f booleans)
-		2. fix 'enter info' button
-		3. add username to conversations with island natives
+		1. add username to conversations with island natives and page35
 -->
-<!-- Div Tags if Starting from Beach:
+<!-- Div Tags
 			 page0 is the title page
 			 page1 is the 'how to' page
 			 page2 is the user info page
@@ -41,6 +39,8 @@
 			 page32 is end of game
 			 page33 is start in forest
 			 page34 is to beach from forest
+			 page35 is choose where to begin
+			 page36 is start in cave
 -->
 	<html>
 		<head>
@@ -50,14 +50,25 @@
     			   body { text-align: center; }
     			   div { display: none; }
  			</style>
+ 			<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Homemade+Apple' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Ribeye+Marrow' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Fascinate+Inline' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Almendra+SC' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Loved+by+the+King' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=Meddon' rel='stylesheet' type='text/css'>
+ 			<link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
 
 		</head>
 		<body style="background-color:lightgrey" onload="start();"> 
-		<h1 style="text-align:center"> 
+		<h1 style="text-align:center">
 				<img src="http://www.clker.com/cliparts/e/5/2/8/1195430727372284989eady_Treasure_Map.svg.med.png"
 					alt="Map"
 					height="250" width="250">
-				Treasure Hunting Game	
+				<FONT FACE="ribeye marrow">Treasure Hunting Game</FONT>
 				<img src="http://clipartlog.com/wp-content/uploads/2008/06/treasure-chest-large.png"
 					alt="Treasure"
 					height="250" width="250">
@@ -66,9 +77,10 @@
 
 		<div id="page0">
 			<h2 style="text-align:center">
-				Background Story
+				<FONT FACE="homemade apple">Background Story</FONT>
 			</h2>
 			<p style="text-align:center">
+				<FONT FACE="homemade apple" SIZE="3px">
 				After your latest skydiving adventure, you happened to land on an island unknown to anyone on the plane.
 				The plane flew on, leaving you on this island by yourself.
 				To get back home, explore the island in search for the buried treasure.
@@ -76,6 +88,7 @@
 				Interact with them to get hints on where to go and advice on how to get there.
 				Beware of the animals in the jungle- make sure you have protection!
 				Good luck!
+				</FONT>
 			</p>
 			<h4 style="text-align:center">
 				<button id="How To Play"
@@ -92,47 +105,34 @@
 
 		<div id="page1">
 			<h2 style="text-align:center">
-			How to Play the Game
+			<FONT FACE="homemade apple"> How to Play the Game </FONT>
 			</h2>
 			<p style="text-align:center">
+			<FONT FACE="homemade apple">
 			Read the screen and press the buttons that describe which choice you want to make.
 			If an alert message comes up, follow the instructions to unlock the choice you wanted to make.
 			If you need help during the game, find the map and use it for tips.
+			</FONT>
 			<br>
 			<button id="TitlePage" onclick="changePage(1, 0)"> Return to Title Page </button>
-			<button id="GamePage" onclick="changePage(1, 2)"> Return to Game </button>
 			</p>
 		</div>
 		
 		<div id="page2">
 			<h2 style="text-align:center">
+				<FONT FACE="homemade apple">
 				User Information
+				</FONT>
 			</h2>
 			<p style="text-align:center">
-				Enter User Name: <input type="text" id="nameBox" size=10 value="">
+				<FONT FACE="homemade apple">
+				Enter Name: <input type="text" id="nameBox" size=10 value="">
 				Enter Gender: <input type="text" id="genderBox" size=10 value="">
+				</FONT>
 			<br>
 				<button id="enterInfo"
-						onclick="">
+						onclick="changePage(2, 35)">
 					Enter Information
-				</button>
-			<br>
-				Where would you like to begin?
-				<button id="Beach"
-						onclick="changePage(2,3)">
-					The Beach
-				</button>
-				<button id="Forest"
-						onclick="changePage(2,33)">
-					The Forest
-				</button>
-				<button id="Cave"
-						onclick="changePage(2,35)">
-					The Cave
-				</button>
-				<button id="Random"
-						onclick="">
-					Choose for Me
 				</button>
 			</p>
 		</div>
@@ -140,11 +140,13 @@
 		<div id="page3"
 			 style="background-color:lightblue">
 			<h2 style="text-align:center">
-				The Beach
+				<FONT FACE="fascinate inline"> The Beach </FONT>
 			</h2>
 			<p style="text-align:center">
+				<FONT FACE="pacifico" SIZE="4px">
 				You are on the beach! There is the ocean on your left and a forest to the right.
 				You see an island inhabitant down the shore - he probably has a map! You should talk to him.
+				</FONT>
 			<br>
 				<button id="Talk"
 					onclick="changePage(3, 4)">
@@ -156,10 +158,12 @@
 		<div id="page4"
 			 style="background-color:lightblue">
 		  	<h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 		  	</h2>
 		  	<p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	Hello! My name is Holokai. Are you looking for the map?
+			 	</FONT>
 			<br>
 				<button id="yes"
 			 		onclick="changePage(4, 5)">
@@ -171,12 +175,14 @@
 		<div id="page5"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	Then you're in luck! Here's the map- use it to find objects that will be useful.
 			 	If you need help, feel free to come back to talk to me, or find my friends in the forest and cave.
 			 	Good luck!
+			 	</FONT>
 			 <br>
 			 	<button id="toForest"
 			 			onclick="changePage(5, 6)">
@@ -188,13 +194,15 @@
 		<div id="page6"
 			 style="background-color:green">
 			<h2 style="text-align:center">
-				The Forest
+				<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			</h2>
 			<p style="text-align:center">
+				<FONT FACE="loved by the king" SIZE="5px">
 				Welcome to the forest! Here, there are many dangerous animals- so be on the lookout!
 				There is a knife hidden in here that you can use for protection.
 				You see an island native foraging for fruits- maybe he knows how to find the protection!
 				Do you want to talk to him or continue to the cave?
+				</FONT>
 			<br>
 				<button id="TalkInForest"
 						onclick="changePage(6, 7)">
@@ -210,11 +218,13 @@
 		<div id="page7"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	Hello, my name is Kekoa! I must warn you- the forest can be a dangerous place!
 			 	I have something you could use for protection! Do you need it?
+			 	</FONT>
 			 <br>
 			 	<button id="yes"
 			 			onclick="changePage(7, 8)">
@@ -230,12 +240,14 @@
 		<div id="page8"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	You're in luck! I have a spare knife that I can give you! 
 			 	Whenever you come across an animal, just take this out, and they'll run away.
 			 	Good luck!
+			 	</FONT>
 			 <br>
 			 	<button id="toCave"
 			 			onclick="changePage(8, 10)">
@@ -247,14 +259,16 @@
 		<div id="page9"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	Ok! Then here are some tips to help you find the treasure!
 			 	First, if you don't already have the protection, you will need to get it to travel through the forest.
 			 	Second, talk to my friends on the beach and in the cave- they will be able to give you helpful objects and advice.
 			 	Third, remember to be careful here! There are many dangerous animals roaming around!
 			 	Good luck!
+			 	</FONT>
 			 <br>
 			 	<button id="toCaveFromForest"
 			 			onclick="protectionAlert()">
@@ -270,12 +284,14 @@
 		<div id="page10"
 			 style="background-color:grey">
 			 <h2 style="text-align:center">
-			 	The Cave
+			 	<FONT FACE="over the rainbow" SIZE="6px"> The Cave </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="amatic sc" SIZE="5px">
 			 	You are in the cave. If you go outside, the forest will lead you to the beach.
 				There is an island inhabitant on the other side of the cave.
 				Do you want to talk to him or look at the map?
+				</FONT>
 			<br>
 				<button id="talkInCave"
 						onclick="changePage(10, 11)">
@@ -291,12 +307,14 @@
 		<div id="page11"
 			 style="background-color:grey">
 			 <h2 style="text-align:center">
-			 	The Cave
+			 	<FONT FACE="over the rainbow" SIZE="6px"> The Cave </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="amatic sc" SIZE="5px">
 			 	Hello, my name is Anuhea! Welcome to the cave! 
 			 	If you leave here, you must go through the forest to reach the beach, but remember to be careful!
 			 	Do you need help finding the treasure?
+			 	</FONT>
 			 <br> 
 			 	<button id="Yes"
 			 			onclick="changePage(11,13)">
@@ -308,9 +326,10 @@
 		<div id="page12"
 			 style="background-color:brown">
 			 <h2 style="text-align:center">
-			 	The Map
+			 	<FONT FACE="yesteryear" SIZE="6px"> The Map </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="meddon">
 			 	This map will to give helpful tips, locations of necessary objects, and locations of helpful people to talk to.
 			 <br>
 			 	Holokai stays on the beach, and he will offer helpful information for finding the treasure and how to get there.
@@ -319,6 +338,7 @@
 			 	Anuhea is in the cave, and he has the shovel. This is necessary for digging for the treasure.
 			 	You must collect all three objects (the map, the knife, and the shovel) in order to begin searching for the treasure.
 			 	The treasure is located on the beach; talk to Holokai if you need help finding it.
+			 	</FONT>
 			 <br>
 			 	<button id="toCave"
 			 			onclick="changePage(12, 10)">
@@ -330,12 +350,14 @@
 		<div id="page13"
 			 style="background-color:grey">
 			 <h2 style="text-align:center">
-			 	The Cave
+			 	<FONT FACE="over the rainbow" SIZE="6px"> The Cave </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="amatic sc" SIZE="5px">
 			 	You're in luck! I have a shovel that I can lend you!
 			 	Use this to dig for the treasure - use the map to find where to dig!
 			 	Good luck and feel free to talk to me or my friends in the forest and on the beach for help!
+			 	</FONT>
 			 <br>
 			 	<button id="toForest"
 			 			onclick="changePage(13,14)">
@@ -347,10 +369,12 @@
 		<div id="page14"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	You enter the forest and see a bear! Quick - show him you have a knife so he'll run away!
+				</FONT>
 			<br>
 				<button id="knife"
 						onclick="changePage(14,15)">
@@ -362,11 +386,13 @@
 		<div id="page15"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	He ran away! Good thing you had the knife that Kekoa gave you!
 			 	Now that that's over, do you want to go to the beach or look at your map?
+			 	</FONT>
 			<br>
 				<button id="beach"
 						onclick="changePage(15,16)">
@@ -382,10 +408,12 @@
 		<div id="page16"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	Welcome back to the beach! Would you like to look at the map or talk to Holokai?
+			 	</FONT>
 			 <br>
 			 	<button id="talk"
 			 			onclick="changePage(16,18)">
@@ -401,9 +429,10 @@
 		<div id="page17"
 			 style="background-color:brown">
 			 <h2 style="text-align:center">
-			 	The Map
+			 	<FONT FACE="yesteryear" SIZE="6px"> The Map </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="meddon">
 			 	This map will to give helpful tips, locations of necessary objects, and locations of helpful people to talk to.
 			 <br>
 			 	Holokai stays on the beach, and he will offer helpful information for finding the treasure and how to get there.
@@ -412,6 +441,7 @@
 			 	Anuhea is in the cave, and he has the shovel. This is necessary for digging for the treasure.
 			 	You must collect all three objects (the map, the knife, and the shovel) in order to begin searching for the treasure.
 			 	The treasure is located on the beach; talk to Holokai if you need help finding it.
+			 	</FONT>
 			 <br>
 			 	<button id="toForest"
 			 			onclick="changePage(17, 15)">
@@ -423,10 +453,12 @@
 		<div id="page18"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	Hello! Do you need help finding the treasure?
+			 	</FONT>
 			 <br>
 			 	<button id="talk"
 			 			onclick="changePage(18, 20)">
@@ -442,9 +474,10 @@
 		<div id="page19"
 			 style="background-color:brown">
 			 <h2 style="text-align:center">
-			 	The Map
+			 	<FONT FACE="yesteryear" SIZE="6px"> The Map </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="meddon">
 			 	This map will to give helpful tips, locations of necessary objects, and locations of helpful people to talk to.
 			 <br>
 			 	Holokai stays on the beach, and he will offer helpful information for finding the treasure and how to get there.
@@ -453,6 +486,7 @@
 			 	Anuhea is in the cave, and he has the shovel. This is necessary for digging for the treasure.
 			 	You must collect all three objects (the map, the knife, and the shovel) in order to begin searching for the treasure.
 			 	The treasure is located on the beach; talk to Holokai if you need help finding it.
+			 	</FONT>
 			 <br>
 			 	<button id="toBeach"
 			 			onclick="changePage(19, 16)">
@@ -464,14 +498,16 @@
 		<div id="page20"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	Ok! I'll see if I can be of assistance!
 			 	I do not know the exact location of the treasure, but I can lead you in the right direction.
 			 	Go North up the beach until you see the opening in the forest.
 			 	Once you see this opening, walk towards the forest and dig - the treasure will be on the outskirts of the forest.
 			 	If you forget my directions, feel free to come back and ask again!
+			 	</FONT>
 			 <br>
 			 	<button id="directions"
 			 			onclick="changePage(20, 22)">
@@ -483,12 +519,14 @@
 		<div id="page21"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	Ok! Feel free to walk around the beach and dig wherever you want - that's the only way you'll find the treasure.
 			 	Come back and talk to me if you need help.
 			 	Good luck!
+			 	</FONT>
 			 <br>
 			 	<button id="look"
 			 			onclick="changePage(21, 23)">
@@ -500,11 +538,13 @@
 		<div id="page22"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	You have walked North for a while and have finally found the opening in the forest!
 			 	Do you want to dig here or closer to the forest?
+			 	</FONT>
 			 <br>
 			 	<button id="here"
 			 			onclick="nothingAlert()">
@@ -520,10 +560,12 @@
 		<div id="page23"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	Time to look for the treasure! Do you want to dig here and check or keep walking up the beach?
+			 	</FONT>
 			 <br>
 			 	<button id="dig"
 			 			onclick="nothingAlert()">
@@ -539,11 +581,13 @@
 		<div id="page24"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	You walk towards the forest and stop at the outskirts -
 			 	do you want to dig here or go back and ask Holokai for directions again?
+			 	</FONT>
 			 <br>
 			 	<button id="dig"
 			 			onclick="changePage(24, 31)">
@@ -559,11 +603,13 @@
 		<div id="page25"
 			 style="background-color:lightblue">
 			 <h2 style="text-align:center">
-			 	The Beach
+			 	<FONT FACE="fascinate inline"> The Beach </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="pacifico" SIZE="4px">
 			 	You have walked up the beach and see an opening in the forest.
 			 	Do you want to go there and ask Kekoa for help, dig here, or go back and ask Holokai?
+			 	</FONT>
 			 <br>
 			 	<button id="Kekoa"
 			 			onclick="changePage(25, 26)">
@@ -583,10 +629,12 @@
 		<div id="page26"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	Hello! Do you need help finding the treasure?
+			 	</FONT>
 			<br>
 				<button id="yes"
 						onclick="changePage(26, 27)">
@@ -598,14 +646,16 @@
 		<div id="page27"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	Ok! There are two openings in the forest - 
 			 	from one, you will see Holokai and from the other you will see just the beach and ocean.
 			 	Leave the forest from the opening where you don't see Holokai, and dig right there - the treasure will be there.
 			 	If you forget my directions, feel free to come back and ask me again!
 			 	Good luck!
+			 	</FONT>
 			<br>
 				<button id="directions"
 						onclick="changePage(27, 28)">
@@ -617,11 +667,13 @@
 		<div id="page28"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	You keep walking and find an opening! 
 			 	You look and see Holokai - do you want to go to the beach and talk to him or keep walking?
+			 	</FONT>
 			<br>
 				<button id="beach"
 						onclick="changePage(28,20)">
@@ -637,10 +689,12 @@
 		<div id="page29"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	You keep walking and see a bear! Pull out your knife for protection!
+			 	</FONT>
 			<br>
 				<button id="knife"
 						onclick="changePage(29,30)">
@@ -652,11 +706,13 @@
 		<div id="page30"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	He ran away! Good thing you had your knife! You keep walking and finally see the ocean! 
 			 	Do you want to go out and dig or go ask Kekoa for his directions again?
+			 	</FONT>
 			<br>
 				<button id="dig"
 						onclick="changePage(30,31)">
@@ -672,10 +728,12 @@
 		<div id="page31"
 			 style="background-color:cyan">
 			 <h2 style="text-align:center">
-			 	Congratulations!
+			 	<FONT FACE="league script"> Congratulations! </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="league script">
 			 	Congratulations! You've found the treasure! Now you can get back home!
+			 	</FONT>
 			 <br>
 			 <button id="endgame"
 			 		 onclick="changePage(31,32)">
@@ -687,7 +745,7 @@
 		<div id="page32"
 			 style="background-color:pink">
 			 <h2 style="text-align:center">
-			 	The End!
+			 	<FONT FACE="league script"> The End! </FONT>
 			 </h2>
 			 <p style="text-align:center">
 			 	<img src="http://touque.ca/EC/ICS3U/students/2011-02/ICS3U2C/HuangJ/Images/cartoon-airplane.png"
@@ -699,11 +757,13 @@
 		<div id="page33"
 			 style="background-color:green">
 			 <h2 style="text-align:center">
-			 	The Forest
+			 	<FONT FACE="almendra sc" SIZE="6px"> The Forest </FONT>
 			 </h2>
 			 <p style="text-align:center">
+			 	<FONT FACE="loved by the king" SIZE="5px">
 			 	You are in the forest. On your left, you can see the beach, but everywhere else is just trees. 
 				You hear a bear growl- time to act fast! Do you want to go to the beach or stay and look for protection?
+				</FONT>
 			<br>
 				<button id="BeachFromForest"
 					onclick="changePage(33, 34)">
@@ -719,15 +779,40 @@
 		<div id="page34"
 			 style="background-color:lightblue">
 			<h2 style="text-align:center">
-				The Beach
+				<FONT FACE="fascinate inline"> The Beach </FONT>
 			</h2>
 			<p style="text-align:center">
+				<FONT FACE="pacifico" SIZE="4px">
 				You are on the beach, safe from the bear! In order to find the knife in the forest, you have to locate the map.
 				There's an island native by the water! He's coming over to talk to you!
+				</FONT>
 			<br>
 				<button id="TalkOnBeach"
 						onclick="changePage(34,4)">
 					Talk to Him
+				</button>
+			</p>
+		</div>
+		
+		<div id="page35">
+			<p style="text-align:center">
+				<FONT FACE="homemade apple"> Where would you like to begin? </FONT>
+			<br>
+				<button id="Beach"
+						onclick="changePage(35,3)">
+					The Beach
+				</button>
+				<button id="Forest"
+						onclick="changePage(35,33)">
+					The Forest
+				</button>
+				<button id="Cave"
+						onclick="changePage(35,36)">
+					The Cave
+				</button>
+				<button id="Random"
+						onclick="">
+					Pick for Me
 				</button>
 			</p>
 		</div>
